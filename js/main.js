@@ -63,4 +63,19 @@ console.log(duplicados3);
 
 
 
+//Ejercicio 4 Escribir una función que tome un arreglo ordenado y devuelva un arreglo completamente desordenado 
+//Entrada: [1, 2, 5, 14, 24, 31, 50, 105] Posible salida: [105, 31, 14, 1, 2, 50, 24, 5]
+
+Array.prototype.shuffle = function() {
+    for ( var i = this.length-1; i > 0; i-- ) {
+        var j = Math.floor( i * Math.random() );
+        var tmp = this[ j ];
+        this[ j ] = this[ i ];
+        this[ i ] = tmp;
+    }
+    return this;
+}
+var foo = [1, 2, 5, 14, 24, 31, 50, 105 ];
+ 
+console.log( foo.shuffle() ); 
 
